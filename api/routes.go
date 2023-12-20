@@ -10,10 +10,10 @@ import (
 
 func SetupRoutes(r *gin.Engine) {
 
-	filesRoute := r.Group("/files")
+	filesRoute := r.Group("api/files")
 
 	filesRoute.GET("/", files.FetchFiles)
 	filesRoute.GET("/download/:filename", download.Download)
 	filesRoute.POST("/upload", upload.Upload)
-	
+
 }
