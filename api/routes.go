@@ -13,7 +13,7 @@ func SetupRoutes(r *gin.Engine) {
 	filesRoute := r.Group("/files")
 
 	filesRoute.GET("/", files.FetchFiles)
-	filesRoute.GET("/download", download.Download)
+	filesRoute.GET("/download/:filename", download.Download)
 	filesRoute.POST("/upload", upload.Upload)
-	filesRoute.GET("/:id", files.FetchFile)
+	
 }
